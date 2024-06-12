@@ -47,11 +47,36 @@
   }
 
   @include abstracts.breakPoint(lg) {
-    display: none;
+    // display: none;
+    background: var(--body-bg-color);
+    position: fixed;
+    inset: 0 50% 0 0;
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
+    z-index: 9;
+    padding: 20px 0;
+  }
+
+  &__overlay {
+    visibility: hidden;
+    opacity: 0;
+
+    @include abstracts.breakPoint(lg) {
+      visibility: visible;
+      opacity: 1;
+      position: fixed;
+      inset: 0;
+      background: rgba($color: #000000, $alpha: 0.4);
+      z-index: 8;
+    }
   }
 
   &__list {
     @extend %flexCenter;
+    @include abstracts.breakPoint(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
   &__item {
     &:hover .dropdown {
@@ -69,6 +94,9 @@
     font-style: normal;
     font-weight: 500;
     line-height: 22px; /* 146.667% */
+    @include abstracts.breakPoint(lg) {
+      padding: 0 20px;
+    }
   }
 
   &__arrow {
