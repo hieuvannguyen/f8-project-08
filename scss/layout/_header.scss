@@ -1,0 +1,140 @@
+@use "../abstracts";
+
+%flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  background: var(--header-bg-color);
+  @include abstracts.breakPoint(lg) {
+    box-shadow: 0px 20px 60px 10px var(--box-shadow-color);
+  }
+}
+
+.top-bar {
+  position: relative;
+  @extend %flexCenter;
+  padding: 30px 0;
+
+  @include abstracts.breakPoint(md) {
+    padding: 20px 0;
+  }
+  @include abstracts.breakPoint(xl) {
+    padding: 16px 0;
+    justify-content: space-between;
+  }
+
+  &__more {
+    display: none;
+    @include abstracts.breakPoint(lg) {
+      display: block;
+      padding: 0 6px;
+    }
+  }
+  &__more-icon {
+    @include abstracts.breakPoint(lg) {
+      display: block;
+      filter: var(--icon-primary-color);
+    }
+  }
+}
+.navbar {
+  margin-left: 129px;
+
+  @include abstracts.breakPoint(xl) {
+    margin-left: 0;
+  }
+
+  @include abstracts.breakPoint(lg) {
+    display: none;
+  }
+
+  &__list {
+    @extend %flexCenter;
+  }
+  &__item {
+    &:hover .dropdown {
+      display: block;
+    }
+  }
+
+  &__link {
+    @extend %flexCenter;
+    gap: 6px;
+    height: 50px;
+    padding: 0 15px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 146.667% */
+  }
+
+  &__arrow {
+    filter: var(--icon-primary-color);
+  }
+}
+.top-action {
+  @extend %flexCenter;
+  gap: 20px;
+  height: 50px;
+  margin-left: auto;
+  @include abstracts.breakPoint(xl) {
+    margin-left: 0;
+  }
+
+  &__group {
+    @extend %flexCenter;
+    border-radius: 8px;
+    background: var(--action-bg-color);
+    box-shadow: 0px 20px 60px 10px var(--box-shadow-color);
+
+    @include abstracts.breakPoint(md) {
+      display: none;
+    }
+  }
+  &__btn {
+    @extend %flexCenter;
+    justify-content: center;
+    height: 50px;
+    min-width: 50px;
+    gap: 10px;
+    padding: 20px;
+  }
+  &__btn--single {
+    padding: 13px;
+  }
+
+  &__btn--single {
+    @include abstracts.breakPoint(lg) {
+      display: none;
+    }
+  }
+  &__icon {
+    filter: var(--icon-primary-color);
+  }
+  &__title {
+    color: var(--primary-color);
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 146.667%;
+  }
+  &__separate {
+    width: 1px;
+    height: 30px;
+    background: var(--action-separate-color);
+  }
+  // &__user {
+  // }
+  &__avt {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}

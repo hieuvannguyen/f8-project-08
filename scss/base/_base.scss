@@ -3,10 +3,32 @@
 ::after {
   box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%;
 }
 body {
+  background: var(--body-bg-color);
   font-size: 1.6rem;
   font-family: "Gordita", sans-serif;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--top-menu-border-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #555;
+// }
