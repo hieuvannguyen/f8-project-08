@@ -1,11 +1,16 @@
 @use "../abstracts";
 
 .dropdown {
+  display: none;
   position: absolute;
   left: 0;
   padding-top: 54px;
-  display: none;
   width: min(1240px, 100%);
+
+  @include abstracts.breakPoint(lg) {
+    position: initial;
+    padding-top: 0;
+  }
 
   &__inner {
     --inner-padding: 30px;
@@ -24,6 +29,16 @@
       left: var(--arrow-left-pos);
       translate: -50%;
     }
+    @include abstracts.breakPoint(lg) {
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+
+      &::before {
+        content: none;
+      }
+    }
   }
 }
 
@@ -37,6 +52,12 @@
     width: var(--main-column-width);
     border-right: 1px solid var(--top-menu-border-color);
     overflow-y: auto;
+
+    @include abstracts.breakPoint(lg) {
+      width: 100%;
+      height: auto;
+      border-right: none;
+    }
   }
 }
 .menu-column {
@@ -55,6 +76,9 @@
     height: 36px;
     @include abstracts.breakPoint(xl) {
       display: none;
+    }
+    @include abstracts.breakPoint(lg) {
+      display: block;
     }
   }
   &__icon-1 {
@@ -119,6 +143,12 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   overflow-y: auto;
+
+  @include abstracts.breakPoint(lg) {
+    position: initial;
+    grid-template-columns: 1fr;
+    padding-left: 0;
+  }
 
   &--not-main {
     position: initial;
