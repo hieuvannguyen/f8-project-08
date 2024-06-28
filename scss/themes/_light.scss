@@ -9,8 +9,9 @@ html {
   --action-bg-color: #ffffff;
   --action-separate-color: #ededf6;
   --box-shadow-color: rgba(237, 237, 246, 0.2);
-  @include abstracts.breakPoint(md) {
+  @include abstracts.screen(md) {
     --header-bg-color: #ffffff;
+    --thumb-bg-color: #fff;
   }
 
   // Dropdown
@@ -22,4 +23,12 @@ html {
   --top-menu-border-color: #d2d1d6;
   --menu-link-hover-color: #0071dc;
   --text-menu-color: #1a162e;
+
+  // Product
+  --product-bg-color: #ffffff;
+  --box-shadow-btn-color: rgba(124, 124, 124, 0.2);
+  --product-brand-color: #9e9da8;
+  // Filter
+  --filter-form-bg-color: #ffffff;
+  --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
 }

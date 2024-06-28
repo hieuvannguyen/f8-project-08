@@ -7,20 +7,23 @@
 
 .header {
   background: var(--header-bg-color);
-  @include abstracts.breakPoint(lg) {
+
+  @include abstracts.screen(lg) {
     box-shadow: 0px 20px 60px 10px var(--box-shadow-color);
   }
 }
 
 .top-bar {
   position: relative;
+  z-index: 1;
+
   @extend %flexCenter;
   padding: 30px 0;
 
-  @include abstracts.breakPoint(md) {
+  @include abstracts.screen(md) {
     padding: 20px 0;
   }
-  @include abstracts.breakPoint(xl) {
+  @include abstracts.screen(xl) {
     padding: 16px 0;
     justify-content: space-between;
   }
@@ -32,11 +35,11 @@
 .navbar {
   margin-left: 129px;
 
-  @include abstracts.breakPoint(xl) {
+  @include abstracts.screen(xl) {
     margin-left: 0;
   }
 
-  @include abstracts.breakPoint(lg) {
+  @include abstracts.screen(lg) {
     // display: none;
     background: var(--body-bg-color);
     position: fixed;
@@ -57,11 +60,11 @@
     }
   }
 
-  @include abstracts.breakPoint(md) {
+  @include abstracts.screen(md) {
     padding: 10px 20px 20px;
   }
 
-  @include abstracts.breakPoint(sm) {
+  @include abstracts.screen(sm) {
     inset: 0 20% 0 0;
   }
 
@@ -69,12 +72,12 @@
     width: 100%;
     text-align: left;
     display: none;
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       display: block;
       padding: 15px 0;
     }
 
-    @include abstracts.breakPoint(md) {
+    @include abstracts.screen(md) {
       padding: 10px 0;
     }
   }
@@ -87,7 +90,7 @@
     opacity: 0;
     transition: 0.5s;
 
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       position: fixed;
       inset: 0;
       background: rgba($color: #000000, $alpha: 0.4);
@@ -98,7 +101,7 @@
   &__list {
     @extend %flexCenter;
 
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       flex-direction: column;
       align-items: flex-start;
       overflow-y: auto;
@@ -111,7 +114,7 @@
       display: block;
     }
 
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       width: 100%;
 
       &:hover .dropdown {
@@ -135,7 +138,7 @@
     font-weight: 500;
     line-height: 146.667%;
 
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       display: flex;
       justify-content: space-between;
       padding: 0;
@@ -147,7 +150,7 @@
   &__arrow {
     filter: var(--icon-primary-color);
 
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       rotate: -90deg;
       transition: rotate 0.3s;
     }
@@ -162,7 +165,7 @@
   gap: 20px;
   height: 50px;
   margin-left: auto;
-  @include abstracts.breakPoint(xl) {
+  @include abstracts.screen(xl) {
     margin-left: 0;
   }
 
@@ -185,7 +188,7 @@
   }
 
   &__btn--single {
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       display: none;
     }
   }

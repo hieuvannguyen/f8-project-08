@@ -134,6 +134,8 @@ img,
 textarea,
 select {
   -webkit-tap-highlight-color: transparent;
+  outline: none;
+  font-family: inherit;
 }
 
 a {

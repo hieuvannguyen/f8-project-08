@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  @include abstracts.breakPoint(lg) {
+  @include abstracts.screen(lg) {
     gap: 10px;
   }
 
@@ -14,12 +14,12 @@
     font-weight: 700;
     line-height: 145.455%; /* 145.455% */
 
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       font-size: 1.8rem;
     }
   }
   &__img {
-    @include abstracts.breakPoint(lg) {
+    @include abstracts.screen(lg) {
       width: 24px;
     }
   }
