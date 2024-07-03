@@ -27,6 +27,18 @@
     padding: 16px 0;
     justify-content: space-between;
   }
+  &__logo {
+    @include abstracts.screen(lg) {
+      gap: 10px;
+
+      &-title {
+        font-size: 1.8rem;
+      }
+      &-img {
+        width: 24px;
+      }
+    }
+  }
 
   &__more-icon {
     filter: var(--icon-primary-color);
@@ -165,8 +177,17 @@
   gap: 20px;
   height: 50px;
   margin-left: auto;
+
   @include abstracts.screen(xl) {
     margin-left: 0;
+  }
+
+  @include abstracts.screen(md) {
+    &__sign-up {
+      height: 36px !important;
+      padding: 0 10px !important;
+      font-size: 1.5rem !important;
+    }
   }
 
   &__group {

@@ -49,6 +49,10 @@
 // Button
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
   background: #f8f8fb;
   height: 46px;
   padding: 0px 20px;

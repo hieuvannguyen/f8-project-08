@@ -141,6 +141,7 @@ select {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   font-family: inherit;
+  margin: 0;
 }
 
 a {
@@ -1340,6 +1341,10 @@ html.dark {
   --product-brand-color: #9e9da8;
   --filter-form-bg-color: #292e39;
   --filter-form-shadow-color: rgba(0, 0, 0, 0.4);
+  --sign-content-bg: #171c28;
+  --sign-text-color: #b9babe;
+  --sign-icon-color: brightness(0) saturate(100%) invert(91%) sepia(6%) saturate(138%)
+    hue-rotate(191deg) brightness(83%) contrast(87%);
 }
 @media (max-width: 767.98px) {
   html.dark {
@@ -1369,6 +1374,10 @@ html {
   --product-brand-color: #9e9da8;
   --filter-form-bg-color: #ffffff;
   --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
+  --sign-content-bg: #ffffff;
+  --sign-text-color: #1a162e;
+  --sign-icon-color: brightness(0) saturate(100%) invert(7%) sepia(14%) saturate(3194%)
+    hue-rotate(213deg) brightness(104%) contrast(95%);
 }
 @media (max-width: 767.98px) {
   html {
@@ -1405,6 +1414,17 @@ html {
   .top-bar {
     padding: 16px 0;
     justify-content: space-between;
+  }
+}
+@media (max-width: 991.98px) {
+  .top-bar__logo {
+    gap: 10px;
+  }
+  .top-bar__logo-title {
+    font-size: 1.8rem;
+  }
+  .top-bar__logo-img {
+    width: 24px;
   }
 }
 .top-bar__more-icon {
@@ -1546,6 +1566,13 @@ html {
     margin-left: 0;
   }
 }
+@media (max-width: 767.98px) {
+  .top-action__sign-up {
+    height: 36px !important;
+    padding: 0 10px !important;
+    font-size: 1.5rem !important;
+  }
+}
 .top-action__group {
   border-radius: 8px;
   background: var(--action-bg-color);
@@ -1616,11 +1643,6 @@ html {
   align-items: center;
   gap: 14px;
 }
-@media (max-width: 991.98px) {
-  .logo {
-    gap: 10px;
-  }
-}
 .logo__title {
   color: var(--primary-color);
   font-size: 2.2rem;
@@ -1628,17 +1650,6 @@ html {
   font-weight: 700;
   line-height: 145.455%; /* 145.455% */
 }
-@media (max-width: 991.98px) {
-  .logo__title {
-    font-size: 1.8rem;
-  }
-}
-@media (max-width: 991.98px) {
-  .logo__img {
-    width: 24px;
-  }
-}
-
 .dropdown {
   display: none;
   position: absolute;
@@ -2030,6 +2041,10 @@ html {
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
   background: #f8f8fb;
   height: 46px;
   padding: 0px 20px;
@@ -2382,6 +2397,219 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.sign-inner {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  min-height: --webkit-fill-available;
+}
+
+.sign-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 49px;
+  flex: 1;
+  padding: 30px;
+  background-color: var(--sign-content-bg);
+  height: 100%;
+}
+.sign-content__logo {
+  position: absolute;
+  top: 80px;
+}
+.sign-content__img {
+  max-width: 422px;
+  width: 100%;
+}
+.sign-content__desc {
+  max-width: 412px;
+  color: var(--sign-text-color);
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+}
+.sign-content__next {
+  position: absolute;
+  bottom: 50px;
+}
+
+.sign-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: var(--body-bg-color);
+}
+@media (max-width: 767.98px) {
+  .sign-form {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    transition: translate 0.3s;
+    overflow-y: auto;
+  }
+  .sign-form.hide {
+    translate: 100%;
+  }
+}
+.sign-form__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 60px;
+  margin-top: 50px;
+}
+.sign-form__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+.sign-form__header-heading {
+  color: var(--sign-text-color);
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.sign-form__header-desc {
+  max-width: 460px;
+  color: #9e9da8;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.sign-form__group {
+  max-width: 460px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.sign-form__password {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.sign-form__input-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  padding-right: 16px;
+  border-radius: 6px;
+  border: 1px solid #d2d1d6;
+}
+.sign-form__input-inner:has(:invalid) {
+  border: 1px solid #ff4040;
+}
+.sign-form__input {
+  height: 44px;
+  padding: 0px 16px;
+  color: #d2d1d6;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 144.444%;
+  overflow: hidden;
+  border: none;
+  background-color: transparent;
+}
+.sign-form__input::placeholder {
+  color: #b9babe;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+.sign-form__input-icon {
+  filter: brightness(0) saturate(100%) invert(91%) sepia(6%) saturate(138%) hue-rotate(191deg) brightness(83%) contrast(87%);
+  cursor: pointer;
+}
+.sign-form__checkbox {
+  display: flex;
+  align-items: center;
+}
+.sign-form__checkbox-label {
+  position: relative;
+  color: #9e9da8;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.sign-form__checkbox-input {
+  position: absolute;
+  appearance: none;
+}
+.sign-form__checkbox-check {
+  position: relative;
+  display: inline-block;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid #9e9da8;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.sign-form__checkbox-check::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 6px;
+  top: 5px;
+  left: 4px;
+  border-bottom: 3px solid #ffb700;
+  border-left: 3px solid #ffb700;
+  transform: scale(0) rotate(-45deg);
+  transition: 0.2s;
+}
+.sign-form__checkbox-label .sign-form__checkbox-input:checked ~ .sign-form__checkbox-check::before {
+  transform: scale(1) rotate(-45deg);
+}
+.sign-form__checkbox-recovery {
+  margin-top: 5px;
+  margin-left: auto;
+  color: #0071dc;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.sign-form__submit {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  margin-top: 50px;
+  max-width: 460px;
+  width: 100%;
+}
+.sign-form__submit-icon {
+  filter: var(--sign-icon-color);
+}
+.sign-form__cta {
+  display: flex;
+  align-items: center;
+  margin-top: 108px;
+}
+.sign-form__cta-text, .sign-form__cta-link {
+  font-size: 1.8rem;
+  line-height: 144.444%;
+}
+.sign-form__cta-text {
+  color: #b9babe;
+  font-weight: 400;
+}
+.sign-form__cta-link {
+  color: #0071dc;
+  font-weight: 500;
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

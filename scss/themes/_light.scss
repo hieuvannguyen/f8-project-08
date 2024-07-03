@@ -31,4 +31,10 @@ html {
   // Filter
   --filter-form-bg-color: #ffffff;
   --filter-form-shadow-color: rgba(200, 200, 200, 0.4);
+
+  // Sign color
+  --sign-content-bg: #ffffff;
+  --sign-text-color:  #1a162e;
+  --sign-icon-color: brightness(0) saturate(100%) invert(7%) sepia(14%) saturate(3194%)
+    hue-rotate(213deg) brightness(104%) contrast(95%);
 }

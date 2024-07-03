@@ -32,7 +32,10 @@ html.dark {
   // Filter
   --filter-form-bg-color: #292e39;
   --filter-form-shadow-color: rgba(0, 0, 0, 0.4);
-  
-  // Button
 
+  // Sign color
+  --sign-content-bg: #171c28;
+  --sign-text-color: #b9babe;
+  --sign-icon-color: brightness(0) saturate(100%) invert(91%) sepia(6%) saturate(138%)
+    hue-rotate(191deg) brightness(83%) contrast(87%);
 }

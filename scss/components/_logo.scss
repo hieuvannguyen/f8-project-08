@@ -3,9 +3,6 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  @include abstracts.screen(lg) {
-    gap: 10px;
-  }
 
   &__title {
     color: var(--primary-color);
@@ -13,14 +10,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 145.455%; /* 145.455% */
-
-    @include abstracts.screen(lg) {
-      font-size: 1.8rem;
-    }
   }
   &__img {
-    @include abstracts.screen(lg) {
-      width: 24px;
-    }
   }
 }

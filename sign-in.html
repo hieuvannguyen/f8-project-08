@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 
 <head>
   <meta charset="UTF-8">
@@ -24,20 +24,84 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header id="header"></header>
+  <div class="sign-inner">
+    <div class="sign-content">
+      <a href="./" class="logo d-none d-md-flex sign-content__logo">
+        <img src="./assets/icons/logo.svg" alt="" class="logo__img">
+        <h1 class="logo__title">grocerymart</h1>
+      </a>
+      <img src="./assets/img/sign/sign.svg" alt="sign-img" class="sign-content__img">
+      <p class="sign-content__desc">
+        The best of luxury brand values, high quality products, and
+        innovative services
+      </p>
+      <button id="" class="sign-content__next js-toggle" toggle-target="#sign-in">
+        <img src="./assets/img/sign/intro.svg" alt="">
+      </button>
+    </div>
+    <div id="sign-in" class="sign-form hide">
+      <div class="sign-form__logo">
+        <a href="./" class="logo">
+          <img src="./assets/icons/logo.svg" alt="" class="logo__img">
+          <h1 class="logo__title">grocerymart</h1>
+        </a>
+      </div>
+      <div class="sign-form__main">
+        <div class="sign-form__header">
+          <h1 class="sign-form__header-heading">
+            Hello Again!
+          </h1>
+          <p class="sign-form__header-desc">
+            Welcome back to sign in. As a returning customer, you have access to your previously
+            saved
+            all
+            information.
+          </p>
+        </div>
+        <form action="./index-logined.html" method="get" id="sign-up-form" class="sign-form__group">
+          <div class="sign-form__email">
+            <div class="sign-form__input-inner">
+              <input type="text" name="" id="" placeholder="Email" class="sign-form__input">
+              <img src="./assets/icons/email-icon.svg" alt="" class="sign-form__input-icon">
+            </div>
+          </div>
+          <div class="sign-form__password">
+            <div class="sign-form__input-inner">
+              <input type="password" name="" id="" placeholder="Password" class="sign-form__input" minlength="8">
+              <img src="./assets/icons/lock-icon.svg" alt="" class="sign-form__input-icon">
+            </div>
+            <div class="sign-form__checkbox">
+              <label for="checkbox" class="sign-form__checkbox-label">
+                <input type="checkbox" name="" id="checkbox" class="sign-form__checkbox-input">
+                <span class="sign-form__checkbox-check"></span>
+                Set as default card
+              </label>
+              <a href="#!" class="sign-form__checkbox-recovery">
+                Recovery Password</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="sign-form__submit">
+        <button type="submit" form="sign-up-form" class="btn btn--primary">Login</button>
+        <button class="btn btn--outline">
+          <img src="./assets/icons/google-icon.svg" alt="" class="sign-form__submit-icon">
+          Sign in with Gmail
+        </button>
+      </div>
+      <div class="sign-form__cta">
+        <span class="sign-form__cta-text">Don't have an account yet?</span>
+        <a href="./sign-up.html" class="sign-form__cta-link">
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script>
-    load("#header", "./templates/header.html");
+    window.dispatchEvent(new Event("template-loaded"));
   </script>
 
-  <!-- Main -->
-  <h1>Sign In Page</h1>
-
-  <!-- Footer -->
-  <footer id="footer"></footer>
-  <script>
-    load("#footer", "./templates/footer.html");
-  </script>
 </body>
 
 </html>

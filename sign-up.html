@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up Grocery Mart</title>
+  <title>Sign In Grocery Mart</title>
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png">
@@ -24,20 +24,86 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header id="header"></header>
+  <div class="sign-inner">
+    <div class="sign-content">
+      <a href="./" class="logo d-none d-md-flex sign-content__logo">
+        <img src="./assets/icons/logo.svg" alt="" class="logo__img">
+        <h1 class="logo__title">grocerymart</h1>
+      </a>
+      <img src="./assets/img/sign/sign.svg" alt="sign-img" class="sign-content__img">
+      <p class="sign-content__desc">
+        The best of luxury brand values, high quality products, and
+        innovative services
+      </p>
+      <button id="" class="sign-content__next js-toggle" toggle-target="#sign-up">
+        <img src="./assets/img/sign/intro.svg" alt="">
+      </button>
+    </div>
+    <div id="sign-up" class="sign-form hide">
+      <div class="sign-form__logo">
+        <a href="./" class="logo">
+          <img src="./assets/icons/logo.svg" alt="" class="logo__img">
+          <h1 class="logo__title">grocerymart</h1>
+        </a>
+      </div>
+      <div class="sign-form__main">
+        <div class="sign-form__header">
+          <h1 class="sign-form__header-heading">
+            Sign Up
+          </h1>
+          <p class="sign-form__header-desc">
+            Let's create your account and Shop like a pro and save money.
+          </p>
+        </div>
+        <form action="./index-logined.html" method="get" id="sign-up-form" class="sign-form__group">
+          <div class="sign-form__email">
+            <div class="sign-form__input-inner">
+              <input type="text" name="" id="" placeholder="Email" class="sign-form__input">
+              <img src="./assets/icons/email-icon.svg" alt="" class="sign-form__input-icon">
+            </div>
+          </div>
+          <div class="sign-form__password">
+            <div class="sign-form__input-inner">
+              <input type="password" name="" id="" minlength="8" placeholder="Password"
+                class="sign-form__input">
+              <img src="./assets/icons/lock-icon.svg" alt="" class="sign-form__input-icon">
+            </div>
+            <div class="sign-form__input-inner">
+              <input type="password" name="" id="" minlength="8" placeholder="Confirm Password"
+                class="sign-form__input">
+              <img src="./assets/icons/lock-icon.svg" alt="" class="sign-form__input-icon">
+            </div>
+            <div class="sign-form__checkbox">
+              <label for="checkbox" class="sign-form__checkbox-label">
+                <input type="checkbox" name="" id="checkbox" class="sign-form__checkbox-input">
+                <span class="sign-form__checkbox-check"></span>
+                Set as default card
+              </label>
+              <a href="#!" class="sign-form__checkbox-recovery">
+                Recovery Password</a>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="sign-form__submit">
+        <button type="submit" form="sign-up-form" class="btn btn--primary">Sign Up</button>
+        <button class="btn btn--outline">
+          <img src="./assets/icons/google-icon.svg" alt="" class="sign-form__submit-icon">
+          Sign in with Gmail
+        </button>
+      </div>
+      <div class="sign-form__cta">
+        <span class="sign-form__cta-text">You have an account yet?</span>
+        <a href="./sign-in.html" class="sign-form__cta-link">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </div>
   <script>
-    load("#header", "./templates/header.html");
+    window.dispatchEvent(new Event("template-loaded"));
   </script>
 
-  <!-- Main -->
-  <h1>Sign Up Page</h1>
-
-  <!-- Footer -->
-  <footer id="footer"></footer>
-  <script>
-    load("#footer", "./templates/footer.html");
-  </script>
 </body>
 
 </html>
